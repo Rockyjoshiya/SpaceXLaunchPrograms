@@ -1,0 +1,156 @@
+    <header>
+        <div class="container-fluid">
+      <h2>SpaceX Launch Programs</h2> 
+    </div>
+    </header>
+
+    <main role="main" class="contain-area">
+        <section class="section-container pt-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="filters card">
+                            <h5>Filters</h5>
+                            <div class="filtersBody">
+                                <h6>Launch Year</h6>
+                                <hr>
+                                <div class="launchYears filter" (click)="getLuanchByYear($event)" >
+                                    <div *ngFor="let year of years">
+                                        <button type="button" [ngClass]="{'active':year == filterParams.launch_year}"  value={{year}}> {{year}}</button>
+                                    </div>
+                                   
+                                </div>
+                    
+                                <h6>Successful Launch</h6>
+                                <hr>
+                                <div class="launchSuccess filter" (click)="getLauchesByLaunchSuccess($event)">
+                                    <div>
+                                        <button type="button" [ngClass]="{'active':'true' == filterParams.launch_success}" value="true">True</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" [ngClass]="{'active':'false' == filterParams.launch_success}" value="false">False</button>
+                                    </div>
+                                 
+                                  
+                                </div>
+                    
+                                <h6>Successful Landing</h6>
+                                <hr>
+                                <div class="landSuccess filter" (click)="getLauchesByLandSuccess($event)">
+                                    <div>
+                                        <button type="button" [ngClass]="{'active':'true' == filterParams.land_success}" value="true">True</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" [ngClass]="{'active':'false' == filterParams.land_success}" value="false">False</button>
+                                    </div>
+                                   
+                            
+                                </div>
+                    
+                    
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let space of lauchesSpaces">
+                                <div class="product-01">
+                                    <div class="proimg">
+                                        <img [src]="space.links.mission_patch" appLazyLoad [alt]="space.mission_name+' Image'" class="w-100">
+                                    </div>
+                                    <div class="pro-content">
+                                        <h3>{{space.mission_name}} #{{space.flight_number}}</h3>
+                                        <h4>Mission Ids</h4>
+                                        <ul>
+                                            <li  *ngFor="let ids of space.mission_id"><a href="javascript:void(0)">{{ids}}</a></li>
+                                            <li *ngIf="space.mission_id.length==0">Not Available</li>
+                                            
+                                        </ul>
+                                        <ul>
+                                            <li> Launch Year: <span>{{space.launch_year}}</span></li>
+                                            <li> Successful Launch: <span>{{space.launch_success}}</span></li>
+                                            <li> Successful Landing: <span>{{space.launch_landing}}</span></li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="!lauchesSpaces.length && isSubmit" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div>No Record Found</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h6>Developed By: Rocky Kumar</h6>
+    </footer>
+
+<!-- <div class="container">
+    <header>
+        <h1 class="pageTitle">SpaceX Launch Programs</h1>
+    </header>
+    
+    <div class="contentContainer">    
+        <div class="filters card">
+            <h5>Filters</h5>
+            <div class="filtersBody">
+                <h6>Launch Year</h6>
+                <hr>
+                <div class="launchYears filter" (click)="getLuanchByYear($event)" >
+                   <button *ngFor="let year of years" type="button" [ngClass]="{'active':year == filterParams.launch_year}"  value={{year}}> {{year}}</button>
+                </div>
+    
+                <h6>Successful Launch</h6>
+                <hr>
+                <div class="launchSuccess filter" (click)="getLauchesByLaunchSuccess($event)">
+                  <button type="button" [ngClass]="{'active':'true' == filterParams.launch_success}" value="true">True</button>
+                  <button type="button" [ngClass]="{'active':'false' == filterParams.launch_success}" value="false">False</button>
+                </div>
+    
+                <h6>Successful Landing</h6>
+                <hr>
+                <div class="landSuccess filter" (click)="getLauchesByLandSuccess($event)">
+                    <button type="button" [ngClass]="{'active':'true' == filterParams.land_success}" value="true">True</button>
+                    <button type="button" [ngClass]="{'active':'false' == filterParams.land_success}" value="false">False</button>
+            
+                </div>
+    
+    
+            </div>
+            
+        </div>
+        <div class="launchItemsBody">
+            <div class="launchitem card" *ngFor="let space of lauchesSpaces">
+                <div class="imageContainer">
+                    <picture>
+                        <img class="image" [src]="space.links.mission_patch">
+                    </picture>
+                </div>
+                   
+    
+                    <p class="cardTitle">{{space.mission_name}} #{{space.flight_number}}</p>
+                    <div class="cardContent">
+                        <p><span class="key">Mission Ids:</span><span class='ids' *ngFor="let ids of space.mission_id">{{ids}}</span><span *ngIf="space.mission_id.length==0">Not Available</span>
+                        <p><span class="key">Launch Year:</span>{{space.launch_year}}</p>
+                        <p><span class="key">Successful Launch:</span>{{space.launch_success}}</p>
+                        <p><span class="key">Successful Landing:</span>{{space.launch_landing}}</p>
+                    </div>
+    
+            </div>
+            <p class="errorMessage" *ngIf="!lauchesSpaces.length && isSubmit">No Record Found</p>
+    
+            
+          
+    
+        </div>
+    </div>
+    
+    <footer><span class="heading">Developed By:</span> Rocky kumar</footer>
+
+</div> -->
+
+

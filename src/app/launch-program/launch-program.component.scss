@@ -1,0 +1,68 @@
+// *{margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6,ul,ol,p{margin: 0;padding: 0;}
+body{background-color: #f3f3f3;padding: 0;margin: 0;}
+header {background-color:#e4e4e4; padding:10px 0;}
+.container-fluid{padding:0 15px;}
+.contain-area {
+position: relative;
+width: 100%;
+background-color:#e4e4e4;
+}
+.section-container{
+    position: relative;
+width: 100%;
+}
+.pro-content h3{
+    color: #0f759c;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.pro-content h4{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 13px;
+    display: block;
+}
+.proimg img{width: 70% !important;padding-top: 10px;}
+.product-01{background-color: #fff; margin-bottom: 15px;min-height: 417px;}
+.pro-content{padding:10px;}
+.pro-content ul:nth-child(3) li{list-style: disc;color: #0f759c; }
+.pro-content ul:nth-child(3){margin-left: 30px;padding-left: 0;}
+.pro-content ul:nth-child(4) li{list-style: none; font-weight: bold;}
+.pro-content ul:nth-child(4) li span{font-weight: normal;color:#0f759c}
+.pro-content ul:nth-child(4){margin-left: 0; padding-left: 0;}
+.proimg img{display: block;margin: 0 auto;}
+.launchYears.filter {display: flex; justify-content: space-between; flex-flow: wrap; padding:0 30px}
+.launchYears.filter div{width: 40%; margin: 10px 0;}
+.launchYears.filter div:nth-child(even){text-align: right;}
+.launchYears.filter div button{background-color: #adf3a8;}
+.launchYears.filter div button.active{background-color: #1b9412;}
+.launchYears.filter{margin-bottom: 30px;}
+.filtersBody{text-align: center; border-bottom:1px solid #ccc; padding-bottom:8px;}
+.filtersBody hr {margin-bottom: 0px;}
+.launchSuccess.filter {display: flex; justify-content: space-between; flex-flow: wrap; padding:0 30px}
+.launchSuccess.filter div{width: 40%; margin: 10px 0;}
+.launchSuccess.filter div:nth-child(even){text-align: right;}
+.launchSuccess.filter div button{background-color: #adf3a8;}
+.launchSuccess.filter div button.active{background-color: #1b9412;}
+.landSuccess.filter {display: flex; justify-content: space-between; flex-flow: wrap; padding:0 30px}
+.landSuccess.filter div{width: 40%; margin: 10px 0;}
+.landSuccess.filter div:nth-child(even){text-align: right;}
+.landSuccess.filter div button{background-color: #adf3a8;}
+.launchSuccess.filter{margin-bottom: 30px;}
+.landSuccess.filter div button.active{background-color:#1b9412;}
+footer {background-color:#e4e4e4; padding:10px 0;}
+footer h6{text-align: center;}
+
+@media only screen and (min-width:1025px) and (max-width:1440px){
+
+}
+@media only screen and (min-width:701px) and (max-width:1024px){
+
+}
+@media only screen and (max-width:700px){
+
+}

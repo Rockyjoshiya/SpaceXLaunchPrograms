@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/SpaceXLaunchPrograms",
+            "outputPath": "dist/SpaceXLaunchPrograms/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
+             
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -121,8 +126,59 @@
               "devServerTarget": "SpaceXLaunchPrograms:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/SpaceXLaunchPrograms/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "SpaceXLaunchPrograms:build",
+            "serverTarget": "SpaceXLaunchPrograms:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "SpaceXLaunchPrograms:build:production",
+              "serverTarget": "SpaceXLaunchPrograms:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "SpaceXLaunchPrograms:build:production",
+            "serverTarget": "SpaceXLaunchPrograms:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
-    }},
-  "defaultProject": "SpaceXLaunchPrograms"
+    }
+  },
+  "defaultProject": "SpaceXLaunchPrograms",
+  "cli": {
+    "analytics": "cddf696d-dfe6-4ac1-a600-7e5a583db4c5"
+  }
 }
