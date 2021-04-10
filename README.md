@@ -1,27 +1,56 @@
 # SpaceXLaunchPrograms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+Angular application for listing and show all launches by SpaceX program.
 
-## Development server
+# Stack Details
+Angular 9.1.15 
+Node.js 12.16.3
+Angular Universal 
+SCSS for styling 
+bootstrap 4.0.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Features
+Lazy loading of Images on scroll
+Use for HTTP Interceptors for loader and error handling
+Custom Component for Loading Screen
+SEO meta and meta description tag added
+Added services for API calling and getting server side data.
+Mobile first design approach
+DRY principle applied
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Screenshots
 
-## Build
+Desktop View
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Tablet View
 
-## Running unit tests
+Mobile View
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Development Approach
+Use Angular CLI.
+Angular CLI is one of the most powerful accessibility tools available when developing apps with Angular.
+Maintain proper folder structure.
+Follow consistent Angular coding styles.
+Typescript.
+Use ES6 Features.
+Use trackBy along with ngFor.
+Break down into small reusable components and functions.
+Use wildcard for undefined path.
+Use jasmine framework in test .
+Use ng universal for server side rendering.
+I started with understanding the requirements of project (assignment).
+I Structured project on the basis of requirment.
+I created project with angular cli command "ng new project-name"  
+I integrated the boilerplate for Server Side rendering using Angular Universal that comes with Express engine.
+I designed templates with bootstrap and scss.
+I created service for integration remote api.
+I also used universal state transfer api for avoiding unnecessary hit api request.
 
-## Running end-to-end tests
+# Deployment
+This application is deployed on Heroku Server. A Procfile is created in root directory which specifies the command to run upon successful deployment to Heroku.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+I have created this github repository and linked it with Heroku for contineous integration(CI) and deployment(CD).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Production: Master branch
+Any push made to master branch will automatically build and deploy the app to Production environment on Heroku. Production build link
