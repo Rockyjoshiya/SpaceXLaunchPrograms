@@ -37,11 +37,11 @@ Mobile View
 7. Use trackBy along with ngFor.
 8. Break down into small reusable components and functions.
 9. Use wildcard for undefined path.
-10. Use jasmine framework in test .
+10. Use jasmine framework in testing .
 11. Use ng universal for server side rendering.
 12. I started with understanding the requirements of project (assignment).
-13. I Structured project on the basis of requirment.
-14. I created project with angular cli command "ng new project-name"  
+13. I created project with angular cli command "ng new project-name"
+14. I Structured project on the basis of requirment.
 15. I integrated the boilerplate for Server Side rendering using Angular Universal that comes with Express engine.
 16. I designed templates with bootstrap and scss.
 17. I created service for integration remote api.
