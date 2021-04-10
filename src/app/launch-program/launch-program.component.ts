@@ -18,7 +18,8 @@ filterParams = {
   launch_year:''
 }
 isSubmit = false;
-  constructor(private titleService: Title,private route: ActivatedRoute,private router:Router,private spaceService:SpaceService,private metaTagService: Meta) {;
+  constructor(private titleService: Title,private route: ActivatedRoute,private router:Router,private spaceService:SpaceService,private metaTagService: Meta) {
+   
     let currentYear = new Date().getFullYear();
     for(let i = 2006;i<currentYear;i++){
       this.years.push(i);
@@ -35,11 +36,12 @@ isSubmit = false;
         this.filterParams[key] = currentParam[key]
       }
       });
-      this.getLauches();
+      // this.getLauches();
     }else{
       this.changeQueryParam({limit: this.filterParams.limit});
-      this.getLauches();
+      // this.getLauches();
     }
+    this.lauchesSpaces=this.route.snapshot.data['lauchesSpaces'];
   }
 
   getLauches(){
@@ -91,5 +93,6 @@ isSubmit = false;
       this.getLauches();
     }
   }
+
 
 }

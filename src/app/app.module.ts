@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +22,8 @@ import { ImageLazyLoadModule } from './utils/directives/image-lazy-load.module';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    ImageLazyLoadModule
+    ImageLazyLoadModule,
+    BrowserTransferStateModule 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true },
   {provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptorService,multi: true}],

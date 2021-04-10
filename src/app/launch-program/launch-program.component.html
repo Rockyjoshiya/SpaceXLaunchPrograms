@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div *ngIf="!lauchesSpaces.length && isSubmit" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div *ngIf="lauchesSpaces?.length  < 1 && isSubmit" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <div>No Record Found</div>
                             </div>
                         </div>
