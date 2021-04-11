@@ -1,6 +1,6 @@
 # SpaceXLaunchPrograms
 
-Angular application for listing and show all launches by SpaceX program.
+Angular application for listing and show all launches by SpaceX program with filters.
 
 ## Stack Details
  - Angular 9.1.15 
@@ -22,10 +22,13 @@ Angular application for listing and show all launches by SpaceX program.
 ## Screenshots
 
 Desktop View
+![Desktop view](./screenshots/desktop-view.PNG)
 
 Tablet View
+![Desktop view](./screenshots/tab-view.PNG)
 
 Mobile View
+![Desktop view](./screenshots/mobile-view.PNG)
 
 ## Development Approach
 1. Use Angular CLI.
@@ -56,5 +59,7 @@ I have created this github repository and linked it with Heroku for contineous i
 Any push made to master branch will automatically build and deploy the app to Production environment on Heroku. Production build link
 
 ## Testing Report
+![Desktop view](./screenshots/testing-report.PNG)
 
 ## Lighthouse score
+![Desktop view](./screenshots/light-house-report.PNG)
