@@ -59,7 +59,7 @@ I have created this github repository and linked it with Heroku for contineous i
 Any push made to master branch will automatically build and deploy the app to Production environment on Heroku. Production build link
 
 ## Testing Report
-![Desktop view](./screenshots/testing-report.PNG)
+![Desktop view](./screenshots/test-report.PNG)
 
 ## Lighthouse score
 ![Desktop view](./screenshots/light-house-report.PNG)
