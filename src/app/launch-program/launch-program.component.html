@@ -15,36 +15,22 @@
                                 <h6>Launch Year</h6>
                                 <hr>
                                 <div class="launchYears filter" (click)="getLuanchByYear($event)" >
-                                    <div *ngFor="let year of years">
-                                        <button type="button" [ngClass]="{'active':year == filterParams.launch_year}"  value={{year}}> {{year}}</button>
-                                    </div>
+                                        <button type="button" *ngFor="let year of years" [ngClass]="{'active':year == filterParams.launch_year}"  value={{year}}> {{year}}</button>
                                    
                                 </div>
                     
                                 <h6>Successful Launch</h6>
                                 <hr>
                                 <div class="launchSuccess filter" (click)="getLauchesByLaunchSuccess($event)">
-                                    <div>
                                         <button type="button" [ngClass]="{'active':'true' == filterParams.launch_success}" value="true">True</button>
-                                    </div>
-                                    <div>
                                         <button type="button" [ngClass]="{'active':'false' == filterParams.launch_success}" value="false">False</button>
-                                    </div>
-                                 
-                                  
                                 </div>
                     
                                 <h6>Successful Landing</h6>
                                 <hr>
                                 <div class="landSuccess filter" (click)="getLauchesByLandSuccess($event)">
-                                    <div>
                                         <button type="button" [ngClass]="{'active':'true' == filterParams.land_success}" value="true">True</button>
-                                    </div>
-                                    <div>
                                         <button type="button" [ngClass]="{'active':'false' == filterParams.land_success}" value="false">False</button>
-                                    </div>
-                                   
-                            
                                 </div>
                     
                     
@@ -53,13 +39,9 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let space of lauchesSpaces">
-                                <div class="product-01">
-                                    <div class="proimg">
+                        <div class="product_flexs">
+                                <div  *ngFor="let space of lauchesSpaces" class="product-01">
                                         <img [src]="space.links.mission_patch_small" appLazyLoad [alt]="space.mission_name+' Image'" class="w-100">
-                                    </div>
-                                    <div class="pro-content">
                                         <h3>{{space.mission_name}} #{{space.flight_number}}</h3>
                                         <h4>Mission Ids</h4>
                                         <ul>
@@ -73,9 +55,8 @@
                                             <li> Successful Landing: <span>{{space.launch_landing}}</span></li>
                                         </ul>
                                         
-                                    </div>
+                                   
                                 </div>
-                            </div>
                             <div *ngIf="lauchesSpaces?.length  < 1 && isSubmit" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <div>No Record Found</div>
                             </div>
