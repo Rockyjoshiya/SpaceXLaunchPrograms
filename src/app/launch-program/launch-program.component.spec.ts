@@ -16,11 +16,6 @@ describe('LaunchProgramComponent', () => {
     .compileComponents();
   }));
 
-  // beforeEach(() => {
-  //   fixture = TestBed.createComponent(LaunchProgramComponent);
-  //   component = fixture.componentInstance;
-  //   fixture.detectChanges();
-  // });
 
   describe(':', () => {
     function setup() {

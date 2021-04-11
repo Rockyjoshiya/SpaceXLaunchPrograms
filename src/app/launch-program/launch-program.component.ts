@@ -27,19 +27,17 @@ isSubmit = false;
    }
    
   ngOnInit(): void {
-    this.titleService.setTitle("SpaceX Launch");
+    this.titleService.setTitle("SpaceX Launch"); //For SEO
     this.metaTagService.updateTag({name: 'description', content: "SpaceX Launch Programs"});
     if(Object.keys(this.route.snapshot.queryParams).length){
-      let currentParam = this.route.snapshot.queryParams;
+      let currentParam = this.route.snapshot.queryParams; //getting query params
       Object.keys(currentParam).forEach((key)=>{
       if(this.filterParams[key] != currentParam[key]){
         this.filterParams[key] = currentParam[key]
       }
       });
-      // this.getLauches();
     }else{
       this.changeQueryParam({limit: this.filterParams.limit});
-      // this.getLauches();
     }
     this.lauchesSpaces=this.route.snapshot.data['lauchesSpaces'];
   }
@@ -60,7 +58,6 @@ isSubmit = false;
           val.launch_landing = 'No';
         }
       })
-      // console.log(this.lauchesSpaces);
     },error => {
       this.lauchesSpaces = [];
     })
