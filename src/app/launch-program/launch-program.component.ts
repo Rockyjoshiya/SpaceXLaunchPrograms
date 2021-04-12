@@ -65,7 +65,11 @@ isSubmit = false;
 
   getLuanchByYear(event){
     if(event.target.localName == 'button'){
-     this.filterParams.launch_year = event.target.value;
+      if(this.filterParams.launch_year){
+        this.filterParams.launch_year = '';
+      }else{
+        this.filterParams.launch_year = event.target.value;
+      }
      this.changeQueryParam(this.filterParams);
      this.getLauches();
     }
@@ -77,7 +81,11 @@ isSubmit = false;
 
   getLauchesByLaunchSuccess(event){
     if(event.target.localName == 'button'){
-      this.filterParams.launch_success = event.target.value;
+      if(this.filterParams.launch_success){
+        this.filterParams.launch_success = '';
+      }else{
+        this.filterParams.launch_success = event.target.value;
+      }
       this.changeQueryParam(this.filterParams);
       this.getLauches();
     }
@@ -85,7 +93,11 @@ isSubmit = false;
 
   getLauchesByLandSuccess(event){
     if(event.target.localName == 'button'){
-      this.filterParams.land_success = event.target.value;
+      if(this.filterParams.land_success){
+        this.filterParams.land_success = ''
+      }else{
+        this.filterParams.land_success = event.target.value;
+      }
       this.changeQueryParam(this.filterParams);
       this.getLauches();
     }
