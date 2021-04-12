@@ -65,7 +65,7 @@ isSubmit = false;
 
   getLuanchByYear(event){
     if(event.target.localName == 'button'){
-      if(this.filterParams.launch_year){
+      if(this.filterParams.launch_year == event.target.value){
         this.filterParams.launch_year = '';
       }else{
         this.filterParams.launch_year = event.target.value;
@@ -81,7 +81,7 @@ isSubmit = false;
 
   getLauchesByLaunchSuccess(event){
     if(event.target.localName == 'button'){
-      if(this.filterParams.launch_success){
+      if(this.filterParams.launch_success == event.target.value){
         this.filterParams.launch_success = '';
       }else{
         this.filterParams.launch_success = event.target.value;
@@ -93,7 +93,7 @@ isSubmit = false;
 
   getLauchesByLandSuccess(event){
     if(event.target.localName == 'button'){
-      if(this.filterParams.land_success){
+      if(this.filterParams.land_success == event.target.value){
         this.filterParams.land_success = ''
       }else{
         this.filterParams.land_success = event.target.value;
